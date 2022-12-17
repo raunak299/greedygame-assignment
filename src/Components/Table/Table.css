@@ -1,0 +1,25 @@
+.table-sec{
+    position:relative;
+    width:100%;
+}
+
+
+table {
+    padding:.5rem;
+    border-style:solid;
+    border-color: var(--secondary-background-color);
+    width:100%;
+}
+
+
+th,td{
+    color:rgb(77, 76, 76);
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+    padding: .5rem;
+}
+ /* td {
+    padding: .5rem;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  } */

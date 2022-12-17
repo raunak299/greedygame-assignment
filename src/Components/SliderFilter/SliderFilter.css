@@ -1,0 +1,25 @@
+.slider-filter{
+    display:flex;
+    flex-direction: column;
+    justify-content:space-between;
+    align-items:flex-end;
+    width:12rem;
+    padding:.5rem;
+    position:absolute;
+    top:0;
+    left:45%;
+    background:white;
+    border-radius:4%;
+    border: 1px solid #ddd;
+}
+
+.slider-filter input{
+    margin-bottom:.5rem;
+    width:100%;
+}
+
+.slider-filter button{
+    margin-bottom:.5rem;
+    width:1.5rem;
+    height:1.5rem;
+}

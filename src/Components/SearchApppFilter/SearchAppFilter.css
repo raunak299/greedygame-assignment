@@ -1,0 +1,26 @@
+.search-app-filter{
+    display:flex;
+    flex-direction: column;
+    justify-content:space-between;
+    align-items:flex-start;
+    width:15rem;
+    padding:.5rem;
+    position:absolute;
+    top:0;
+    left:45%;
+    background:white;
+    border-radius:4%;
+    border: 1px solid #ddd;
+}
+
+.search-app-filter input{
+    margin-bottom:.5rem;
+    padding:.2rem;
+    width:100%;
+}
+
+.search-app-filter button{
+    margin-bottom:.5rem;
+    width:1.5rem;
+    height:1.5rem;
+}

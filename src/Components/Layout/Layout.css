@@ -1,0 +1,19 @@
+.layout{
+    min-height:100vh;
+    padding: 1.5rem ;
+    color: var(--main-text-color);
+    background: var(--main-background-color);
+}
+
+.add-tweet-btn{
+    position:fixed;
+    right:2rem;
+    bottom:6rem;
+    z-index:100;
+}
+
+@media(min-width:700px){
+    .add-tweet-btn{
+        display:none;
+    }
+}

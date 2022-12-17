@@ -1,0 +1,19 @@
+.home-page{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.home-page h2{
+    margin-bottom:2rem;
+}
+
+.date-setting{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    width:100%;
+    margin-bottom:1rem;
+}
