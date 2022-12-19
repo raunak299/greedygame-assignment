@@ -87,8 +87,10 @@ const dataSlice = createSlice({
           impressions,
         } = item;
         const app = appDataMap.get(app_id);
-        let fill_rate = requests / responses;
-        let ctr = clicks / impressions;
+        let fill_rate = (requests / responses) * 100;
+        fill_rate = Math.round(fill_rate * 100) / 100;
+        let ctr = (clicks / impressions) * 100;
+        ctr = Math.round(ctr * 100) / 100;
         revenue = Math.round(revenue * 100) / 100;
         date = date.substr(0, 10);
 
