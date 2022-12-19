@@ -11,6 +11,8 @@
     background:white;
     border-radius:4%;
     border: 1px solid #ddd;
+    pointer-events: initial;
+    border-color: rgb(67, 149, 237);
 }
 
 .slider-filter label  {

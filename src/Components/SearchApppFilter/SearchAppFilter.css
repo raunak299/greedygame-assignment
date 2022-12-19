@@ -7,10 +7,12 @@
     padding:.5rem;
     position:absolute;
     top:0;
-    left:45%;
+    left:40%;
     background:white;
     border-radius:4%;
     border: 1px solid #ddd;
+    border-color: rgb(67, 149, 237);
+    pointer-events: initial;
 }
 
 .search-app-filter label  {

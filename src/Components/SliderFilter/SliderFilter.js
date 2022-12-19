@@ -30,7 +30,7 @@ function SliderFilter(props) {
         analyticsData,
       })
     );
-    props.setSliderVisibility(false);
+    dispatch(dataSliceActions.setSliderVisibility());
   };
 
   return (

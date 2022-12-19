@@ -1,14 +1,24 @@
 import FilterAltIcon from "@mui/icons-material/FilterAlt";
 import { useState } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
+import { dataSliceActions } from "../../Store/Data-Slice";
 import SearchAppFilter from "../SearchApppFilter/SearchAppFilter";
 import SliderFilter from "../SliderFilter/SliderFilter";
 import "./Table.css";
 
 function Table() {
-  const [sliderFilterVisible, setSliderVisibility] = useState(false);
-  const [SearchAppFilterVisible, setSearchAppFilterVisisbility] =
-    useState(false);
+  //   const [sliderFilterVisible, setSliderVisibility] = useState(false);
+  //   const [SearchAppFilterVisible, setSearchAppFilterVisisbility] =
+  //     useState(false);
+
+  const dispatch = useDispatch();
+
+  const sliderFilterVisible = useSelector(
+    (state) => state.dataSlice.sliderFilterVisible
+  );
+  const SearchAppFilterVisible = useSelector(
+    (state) => state.dataSlice.SearchAppFilterVisible
+  );
 
   const tableColumnsList = useSelector((state) => state.dataSlice.tableColumns);
   const analyticsData = useSelector(
@@ -21,8 +31,10 @@ function Table() {
   const filterHandler = (column) => {
     setFilterActive(column);
     (column === "app" || column === "date") &&
-      setSearchAppFilterVisisbility(true);
-    column !== "app" && column !== "date" && setSliderVisibility(true);
+      dispatch(dataSliceActions.setSearchAppFilterVisisbility());
+    column !== "app" &&
+      column !== "date" &&
+      dispatch(dataSliceActions.setSliderVisibility());
   };
 
   return (
@@ -33,21 +45,15 @@ function Table() {
         </h1>
       )}
 
-      <div className={`table-sec ${analyticsData.length > 0 ? "scroll" : ""}`}>
+      <div className={`table-sec ${analyticsData.length > 0 ? "scroll" : ""} `}>
         {sliderFilterVisible && (
           <div className={`slider-filter-cont`}>
-            <SliderFilter
-              setSliderVisibility={setSliderVisibility}
-              filterActive={filterActive}
-            />
+            <SliderFilter filterActive={filterActive} />
           </div>
         )}
         {SearchAppFilterVisible && (
           <div className="slider-filter-cont">
-            <SearchAppFilter
-              setSearchAppFilterVisisbility={setSearchAppFilterVisisbility}
-              filterActive={filterActive}
-            />
+            <SearchAppFilter filterActive={filterActive} />
           </div>
         )}
 

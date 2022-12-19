@@ -39,6 +39,8 @@ const dataSlice = createSlice({
       fill_rate: 0,
       ctr: 0,
     },
+    sliderFilterVisible: false,
+    SearchAppFilterVisible: false,
   },
   reducers: {
     rearrangeColumns(state, action) {
@@ -129,6 +131,14 @@ const dataSlice = createSlice({
     setFilter(state, action) {
       const { columnName, filterValue } = action.payload;
       state.filterValue[columnName] = filterValue;
+    },
+
+    setSliderVisibility(state) {
+      state.sliderFilterVisible = !state.sliderFilterVisible;
+    },
+
+    setSearchAppFilterVisisbility(state) {
+      state.SearchAppFilterVisible = !state.SearchAppFilterVisible;
     },
 
     filterBySearch(state, action) {

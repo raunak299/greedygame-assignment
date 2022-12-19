@@ -31,7 +31,7 @@ function SearchAppFilter(props) {
       })
     );
 
-    props.setSearchAppFilterVisisbility(false);
+    dispatch(dataSliceActions.setSearchAppFilterVisisbility());
   };
 
   const resetSearchFilter = () => {
@@ -48,7 +48,7 @@ function SearchAppFilter(props) {
       })
     );
 
-    props.setSearchAppFilterVisisbility(false);
+    dispatch(dataSliceActions.setSearchAppFilterVisisbility());
   };
 
   return (

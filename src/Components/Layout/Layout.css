@@ -1,9 +1,11 @@
 .layout{
     min-height:100vh;
-    padding: 1.5rem ;
     color: var(--main-text-color);
     background: var(--main-background-color);
+    /* padding:1.5rem; */
 }
+
+
 
 .add-tweet-btn{
     position:fixed;

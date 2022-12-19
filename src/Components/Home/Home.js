@@ -9,12 +9,20 @@ import { useEffect, useState } from "react";
 import useHTTP from "../../custom-hooks/custom-hooks";
 import { useDispatch } from "react-redux";
 import { dataSliceActions } from "../../Store/Data-Slice";
+import { useSelector } from "react-redux";
 
 function Home() {
   const [settingsModalVisible, setSettingsModalVisibility] = useState(false);
   const { isLoading, sendRequest } = useHTTP();
   const [dateLabel, setDateLabel] = useState("Select Start Date");
   const dispatch = useDispatch();
+
+  const sliderFilterVisible = useSelector(
+    (state) => state.dataSlice.sliderFilterVisible
+  );
+  const SearchAppFilterVisible = useSelector(
+    (state) => state.dataSlice.SearchAppFilterVisible
+  );
 
   const [toDate, setToDate] = useState("");
   const [fromDate, setFromDate] = useState("");
@@ -56,11 +64,17 @@ function Home() {
       );
   }, [toDate, fromDate, sendRequest, dispatch]);
 
+  console.log(SearchAppFilterVisible);
+
   return (
     <Layout>
       {isLoading && <h1>Loading !!</h1>}
       {!isLoading && (
-        <div className="home-page">
+        <div
+          className={`home-page ${
+            SearchAppFilterVisible || sliderFilterVisible ? " disable-home" : ""
+          }`}
+        >
           <h2>Analytics</h2>
           <div className="date-setting">
             <div className="date-sec">
@@ -77,9 +91,11 @@ function Home() {
               </Button>
             )}
           </div>
+
           {settingsModalVisible && (
             <Settings setSettingsModalVisibility={setSettingsModalVisibility} />
           )}
+
           <Table />
         </div>
       )}
