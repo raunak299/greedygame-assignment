@@ -5,7 +5,7 @@ import Home from "./Components/Home/Home";
 function App() {
   return (
     <Routes>
-      <Route path="/" element={<Navigate to="/home" />} />
+      <Route path="/" element={<Navigate to="/analytics" />} />
       <Route path="/analytics" element={<Home />} />
       <Route path="*" element={<Navigate to="/analytics" />} />
     </Routes>
