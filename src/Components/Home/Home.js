@@ -97,10 +97,7 @@ function Home() {
 
           {analyticsData.length > 0 && <Table />}
           {!analyticsData.length && (
-            <h1>
-              Hey Something OFF !! Change your filter or Choose different Date
-              range
-            </h1>
+            <h1>Hey Something OFF !! Choose different Date range</h1>
           )}
         </div>
       )}
