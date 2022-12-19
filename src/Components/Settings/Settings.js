@@ -8,6 +8,12 @@ function Settings(props) {
   const dispatch = useDispatch();
 
   const columnVisibilityHandler = (position) => {
+    if (
+      tableColumnsList[position].column === "app" ||
+      tableColumnsList[position].column === "date"
+    ) {
+      return;
+    }
     dispatch(dataSliceActions.columnVisibilityHandler({ position }));
   };
 
@@ -32,7 +38,7 @@ function Settings(props) {
 
   return (
     <div className="settings-component">
-      <h4>settings sec</h4>
+      <h4>Dimension and Metrics</h4>
       <div className="column-heading">
         {tableColumnsList.map((item, index) => (
           <Button
@@ -55,12 +61,6 @@ function Settings(props) {
           onClick={() => props.setSettingsModalVisibility(false)}
         >
           Close
-        </Button>
-        <Button
-          variant="contained"
-          onClick={() => props.setSettingsModalVisibility(false)}
-        >
-          Apply
         </Button>
       </div>
     </div>

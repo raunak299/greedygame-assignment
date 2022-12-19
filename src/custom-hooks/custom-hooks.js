@@ -21,7 +21,7 @@ const useHTTP = () => {
       }
 
       let responseData = await response.json();
-      // console.log(responseData);
+      //   console.log(responseData);
       applyData(responseData);
     } catch (err) {
       // setError(err.message);

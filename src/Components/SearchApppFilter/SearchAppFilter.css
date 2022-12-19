@@ -13,6 +13,10 @@
     border: 1px solid #ddd;
 }
 
+.search-app-filter label  {
+    margin-bottom:.5rem;
+}
+
 .search-app-filter input{
     margin-bottom:.5rem;
     padding:.2rem;
@@ -23,4 +27,11 @@
     margin-bottom:.5rem;
     width:1.5rem;
     height:1.5rem;
+}
+
+.btn-sec{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width:100%;
 }

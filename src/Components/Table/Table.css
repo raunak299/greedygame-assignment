@@ -1,7 +1,17 @@
+h1{
+    margin-bottom:2rem;
+}
+
 .table-sec{
     position:relative;
     width:100%;
+    
 }
+
+.scroll {
+    overflow-x: scroll;
+}
+
 
 
 table {
@@ -9,7 +19,12 @@ table {
     border-style:solid;
     border-color: var(--secondary-background-color);
     width:100%;
+    min-height:15rem;
 }
+
+
+
+
 
 
 th,td{
@@ -17,6 +32,11 @@ th,td{
     text-align: center;
     border-bottom: 1px solid #ddd;
     padding: .5rem;
+    font-weight:500;  
+}
+
+.hide{
+    visibility: hidden;
 }
  /* td {
     padding: .5rem;
