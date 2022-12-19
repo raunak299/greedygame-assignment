@@ -21,9 +21,10 @@ function Table() {
   );
 
   const tableColumnsList = useSelector((state) => state.dataSlice.tableColumns);
-  const analyticsData = useSelector(
+  const filteredAnalyticsData = useSelector(
     (state) => state.dataSlice.filteredAnalyticsData
   );
+  const analyticsData = useSelector((state) => state.dataSlice.analyticsData);
   const maxValue = useSelector((state) => state.dataSlice.maxValue);
   const filterValue = useSelector((state) => state.dataSlice.filterValue);
 
@@ -39,13 +40,17 @@ function Table() {
 
   return (
     <>
-      {!analyticsData.length && (
+      {!filteredAnalyticsData.length && (
         <h1>
           Hey Something OFF !! Change your filter or Choose different Date range
         </h1>
       )}
 
-      <div className={`table-sec ${analyticsData.length > 0 ? "scroll" : ""} `}>
+      <div
+        className={`table-sec ${
+          filteredAnalyticsData.length > 0 ? "scroll" : ""
+        } `}
+      >
         {sliderFilterVisible && (
           <div className={`slider-filter-cont`}>
             <SliderFilter filterActive={filterActive} />
@@ -82,7 +87,7 @@ function Table() {
 
           <tbody>
             {analyticsData.length > 0 &&
-              analyticsData.map((item, indexrow) => (
+              filteredAnalyticsData.map((item, indexrow) => (
                 <tr key={indexrow}>
                   {tableColumnsList.map((col, indexcol) => {
                     let column = col.column;

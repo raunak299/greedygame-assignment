@@ -23,6 +23,7 @@ function Home() {
   const SearchAppFilterVisible = useSelector(
     (state) => state.dataSlice.SearchAppFilterVisible
   );
+  const analyticsData = useSelector((state) => state.dataSlice.analyticsData);
 
   const [toDate, setToDate] = useState("");
   const [fromDate, setFromDate] = useState("");
@@ -64,8 +65,6 @@ function Home() {
       );
   }, [toDate, fromDate, sendRequest, dispatch]);
 
-  console.log(SearchAppFilterVisible);
-
   return (
     <Layout>
       {isLoading && <h1>Loading !!</h1>}
@@ -96,7 +95,13 @@ function Home() {
             <Settings setSettingsModalVisibility={setSettingsModalVisibility} />
           )}
 
-          <Table />
+          {analyticsData.length > 0 && <Table />}
+          {!analyticsData.length && (
+            <h1>
+              Hey Something OFF !! Change your filter or Choose different Date
+              range
+            </h1>
+          )}
         </div>
       )}
     </Layout>
