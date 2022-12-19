@@ -30,7 +30,7 @@ function Home() {
   //   const [appData, setAppData] = useState(new Map([]));
   useEffect(() => {
     sendRequest(
-      { url: "http://go-dev.greedygame.com/v3/dummy/apps" },
+      { url: "https://go-dev.greedygame.com/v3/dummy/apps" },
       (apiResponse) => {
         dispatch(
           dataSliceActions.setAppDataHandler({ responseData: apiResponse.data })
@@ -43,7 +43,7 @@ function Home() {
     toDate &&
       sendRequest(
         {
-          url: `http://go-dev.greedygame.com/v3/dummy/report?startDate=${fromDate}&endDate=${toDate}`,
+          url: `https://go-dev.greedygame.com/v3/dummy/report?startDate=${fromDate}&endDate=${toDate}`,
         },
         (responseData) => {
           let analyticsData = responseData.data;
